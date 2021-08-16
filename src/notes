@@ -1,0 +1,54 @@
+react testing library(comes with CRA) -- test driven development
+
+here we first write the test & then starts development with the bare min code , so initially test fails & then later we again run the 
+test suite & it works fine
+
+the advantage of writing the test first , we have a clear idea what we want , & then we modify the code to make those test pass
+
+
+with react testing library we implement automated testing
+automated testing is where we write scripts (here some kind of action is triggered & we expect some outcome)
+
+generally writing the test takes more efforts than developing the actual functionality
+
+in large applications , when we add some new code & that unintentionally breaks other features , then it is difficult to go 
+and manually test all features in each & every component
+
+ so we can write test for each feature 
+ if one of the feature is failing then run all the test suites &then test will tell that which feature is/are failing
+
+ Automated testing can serve as documentation for junior developers as it is written so well that it tells us how the software is supposed to work 
+
+RUN test
+
+run test using cmd npm run test
+or yarn run test
+then it will run all test in applications(any file appended with .test is a test file)
+
+when we want to test a particular componet go to that component folder & create a folder   --   __test__ 
+inside here we create test file , this 'll be responsible for testing that component 
+the test file must contains at least one test otherwise it fails
+
+Syntax for this testing file
+1. React import -- bcoz we r testing the react component
+2. component that needs to be tested
+
+everytime the test suits run ,that comp is rendered on some sort of virtual dom 
+then all the test will be executed based on that virtual DOM 
+
+to render our test in virtual DOM , we need to import render method from testing-library
+last import is expect 
+
+code --
+first keyword will be test() -- a fx that is going to be executed  
+that accepts 2 params , one is a string & 2nd is the fx that'll be having all the logic for our test
+
+to remove the repetitive code , run a particular piece of functionality that runs before each test , so the special fx that runs before each test is
+beforeEach -- write the logic inside the arrow fx that runs before each test 
+
+but just declaring & defining it doesn't become accessible to all test bcoz of the scoping in the js , so declare the most used as global at the top level
+
+afterEach is a fx that runs after each test & cleanup is a fx that clears all DOM nodes we render after each test 
+& cleanup is created by default if we create a react app 
+
+afterAll , beforeAll are also fx
